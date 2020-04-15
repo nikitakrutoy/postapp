@@ -34,7 +34,7 @@ To post image to tg it sends image file id with message back to tg server. To po
 
 Finally, after eash task there is a callback task which sends success message to user.
 
-# Usage
+# Usage (aka Как запустить вашу программу)
 
 First you will need to obtain a domain and ssl certificates for it. Put them in ssl folder in app root. Self-signed certificates probably would not work. I signed mine with certbot.
 
@@ -63,4 +63,5 @@ Start app
 python start.py
 ```
 
+Probably I will finish with docker-compose.yaml soon and it should starts with docker-compose up
 
