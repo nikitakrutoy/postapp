@@ -12,6 +12,8 @@ on server side, but that would require user to trust server his login and passwo
 with a strange combination of Facebook and OK.ru. I added Telegram Channels because I was afraid that ok.ru api team would not give 
 my app permisions or give them after deadline.
 
+![alt text](https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F028%2F021%2Fwork.jpg)
+
 ## Stack (aka Какой язык программирования и технологии использовать для реализации данного сервиса?)
 The app stack is Python3.6.9 + python-telegram-bot + Flask + Celery. I this is a great combination because with python and flask
 development of small apps an fast and ease. Using python-telegram-bot you do not need to care a lot about frontend. And Celery just 
