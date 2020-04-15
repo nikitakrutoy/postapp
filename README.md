@@ -64,7 +64,7 @@ Install dependencies:
 pip install -r requeirements.txt
 ```
 
-Set webhook to you bot:
+Set webhook to your bot:
 ```
 python webhook.py
 ```
