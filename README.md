@@ -59,10 +59,19 @@ Start mongodb:
 ```
 docker run -p 6379:6379 mongo
 ```
+Install dependencies:
+```
+pip install -r requeirements.txt
+```
 
 Set webhook to you bot:
 ```
 python webhook.py
+```
+
+Start celery
+```
+celery -A bot.tasks.app worker
 ```
 
 Start app
