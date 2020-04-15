@@ -1,6 +1,6 @@
 # postapp
 Telegram bot for posting to Facebook, Odnoklassniki and Telegram Channels. Bot can send post with one image or text or both to all or specified list of authorized pages.
-Working copy of of bot should be [here](https://t.me/postapp_bot) but i do not guarantee that because i have not finished with docker images of the bot.
+Working copy of of bot should be [here](https://t.me/postapp_bot) but i do not guarantee that because i have not finished with docker images of the bot and it may fall and do not restart.
 
 
 # Backstory (aka Проектирование сервиса)
