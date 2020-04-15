@@ -57,7 +57,7 @@ docker run -p 6379:6379 redis
 Start mongodb:
 
 ```
-docker run -p 6379:6379 mongo
+docker run -p 27017:27017 mongo
 ```
 Install dependencies:
 ```
