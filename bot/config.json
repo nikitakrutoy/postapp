@@ -1,0 +1,18 @@
+{
+    "token": "token",
+    "facebook": {
+        "client_id": "2899711096922200",
+        "client_secret": "secret",
+        "redirect_uri": "https://yourdomain:8443/auth/fb"
+    },
+    "odnoklassniki": {
+        "client_id": "512000435503",
+        "client_key": "key",
+        "client_secret": "secret",
+        "redirect_uri": "https://yourdomain:8443/auth/ok"
+    },
+    "celery": {
+	"broker": "redis://localhost:6379/0",
+        "backend": "mongodb://localhost:27017/from_celery"
+    }
+}

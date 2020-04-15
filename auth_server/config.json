@@ -1,0 +1,13 @@
+{
+    "facebook": {
+        "client_id": "2899711096922200",
+        "client_secret": "secret",
+        "redirect_uri": "https://yourdomain:8443/auth/fb"
+    },
+    "odnoklassniki": {
+        "client_id": "512000435503",
+        "client_key": "key",
+        "client_secret": "secret",
+        "redirect_uri": "https://yourdomain:8443/auth/ok"
+    }
+}

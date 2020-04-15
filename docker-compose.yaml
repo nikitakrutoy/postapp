@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+    postapp:
+        image: "postapp:latest"
+        ports:
+            - "8443:8443"
+        restart: always
+        command: ['gunicorn', '-w', '1', 'app:app', '--certfile=ssl/cert.pem', '--keyfile=ssl/key.pem', '-b', '0.0.0.0:8443']
+        depends_on:
+            - redis
+            - mongo
+    postapp-worker:
+        image: "postapp:latest"
+        restart: always
+        command: ['celery', '-A', 'bot.tasks.app', 'worker']
+        depends_on:
+            - redis
+            - mongo
+    redis:
+        image: "redis:latest"
+        restart: always
+        ports:
+            - "6379:6379"
+    mongo:
+        image: "mongo:latest"
+        restart: always
+        ports:
+            - "27017:27017"
+
