@@ -22,6 +22,9 @@ I tried to keep user interface as simple as it can be. There is only to commands
 authenfication and for listing user accounts, respectively. To post you just need to send a message to bot. The result will
 en error message or success message.
 
+# Video
+[click](https://yadi.sk/d/QjncgO0coqi_5Q)
+
 # Service (aka Распишите по шагам весь процесс работы программы)
 
 First you authorized with one of sites. For fb and ok.ru there is a callback which stores user tokens by there telegram id to mongodb.
