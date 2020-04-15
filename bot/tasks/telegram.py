@@ -6,10 +6,14 @@ from ..utils import Query
 class TelegramPost(celery.Task):
     def setup(self, tg_id, token):
         self.tg_id = tg_id
+        self.bot = telegram.Bot(token=token)
         db = pymongo.MongoClient().users
         data = db.data.find_one(dict(tgId=str(tg_id)))
-        self.channels = db.data.find_one(dict(tgId=str(tg_id))).get("channels", [])
-        self.bot = telegram.Bot(token=token)
+        if data is None:
+            data = {}
+            self.bot.send_message(chat_id=int(tg_id), text="You do not have authorized tg channels")
+        self.channels = data.get("channels", [])
+        
 
     def post_channel(self, message, photo, channel):
         if photo is not None:

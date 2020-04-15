@@ -17,9 +17,13 @@ class FacebookPost(celery.Task):
     def setup(self, tg_id, token, query):
         self.tg_id = tg_id
         self.query = query
-        db = pymongo.MongoClient().users
-        self.data = DataStorage(db.data.find_one(dict(tgId=str(tg_id))).get("fb"), exception_class=FacebookPostException)
         self.bot = telegram.Bot(token=token)
+        db = pymongo.MongoClient().users
+        data = db.data.find_one(dict(tgId=str(tg_id)))
+        if data is None:
+            data = {}
+            self.bot.send_message(chat_id=int(tg_id), text="You do not have authorized fb accounts")
+        self.data = DataStorage(data.get("fb", {}), exception_class=FacebookPostException)
         return self
 
     def on_failure(self, exc, task_id, args, kwargs, einfo):
