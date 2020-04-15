@@ -14,6 +14,8 @@ my app permisions or give them after deadline.
 
 ![alt text](https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F028%2F021%2Fwork.jpg)
 
+Also I want to notice that it did not took 4 hours to code this app. I guess it could take 4 hours only if you previously done identical app and you are only rewriting it.
+
 ## Stack (aka Какой язык программирования и технологии использовать для реализации данного сервиса?)
 The app stack is Python3.6.9 + python-telegram-bot + Flask + Celery. I this is a great combination because with python and flask
 development of small apps an fast and ease. Using python-telegram-bot you do not need to care a lot about frontend. And Celery just 
@@ -69,4 +71,6 @@ python start.py
 ```
 
 Probably I will finish with docker-compose.yaml soon and it should starts with docker-compose up
+
+
 
