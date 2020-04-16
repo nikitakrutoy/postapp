@@ -43,7 +43,7 @@ Finally, after eash task there is a callback task which sends success message to
 
 # Usage (aka Как запустить вашу программу)
 
-First you will need to obtain a domain and ssl certificates for it. Put them in ssl folder in app root name them cert.pem and key.pem. Self-signed certificates probably would not work. I signed mine with certbot.
+First you will need to obtain a domain, ssl certificate and key for the domain. Put them in ssl folder in app root name them fullchain.pem and key.pem. Self-signed certificates probably would not work. I signed mine with certbot.
 
 After that you need to change credentials for fb and ok.ru apps in bot/config.json and auth_server/config.json to your credentials.
 
