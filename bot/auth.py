@@ -2,13 +2,10 @@
 from urllib.parse import urlencode
 import telegram
 import pymongo
+from .utils import Config
 
 db = pymongo.MongoClient().users
 
-CLIETN_ID = 2899711096922200
-REDIRECT_URI = "https://nikitakrutoy.ml:8443/auth/fb"
-SCOPE = "publish_pages,manage_pages"
-OAUTH="https://www.facebook.com/v6.0/dialog/oauth"
 
 def auth(update, context):
     site = None if not context.args else context.args[0]
@@ -22,10 +19,11 @@ def auth(update, context):
         context.bot.send_message(update.effective_chat.id, text="Usage: /auth {fb, ok, tg}")
 
 def auth_fb(update, context):
+    OAUTH="https://www.facebook.com/v6.0/dialog/oauth"
     params = dict(
-        client_id=CLIETN_ID,
-        redirect_uri=REDIRECT_URI,
-        scope=SCOPE,
+        client_id=Config.options["facebook"]["client_id"],
+        redirect_uri=Config.options["facebook"]["redirect_uri"],
+        scope="publish_pages,manage_pages",
         state=update.effective_user.id
     )
     link = f"{OAUTH}?{urlencode(params)}" 
@@ -38,8 +36,8 @@ def auth_fb(update, context):
 def auth_ok(update, context):
     oauth = "https://connect.ok.ru/oauth/authorize"
     params = dict(
-        client_id=512000435503,
-        redirect_uri="https://nikitakrutoy.ml:8443/auth/ok",
+        client_id=Config.options["odnoklassniki"]["client_id"],
+        redirect_uri=Config.options["odnoklassniki"]["redirect_uri"],
         scope="VALUABLE_ACCESS;PHOTO_CONTENT;LONG_ACCESS_TOKEN;GROUP_CONTENT",
         response_type="code",
         state=update.effective_user.id
